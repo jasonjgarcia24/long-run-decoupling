@@ -1,0 +1,11 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Raw GPS tracks are intentionally NOT published (they contain exact coordinates)
+*.gpx
