@@ -4,7 +4,7 @@
 
 **▶ Live Perplexity thread:** https://www.perplexity.ai/search/9703b24d-5fd3-4298-98e5-65b06bbe50c1
 
-This repo is the *making-of* that thread: the data, the prompts, and the one real finding it surfaced. It's my submission for **Option 1** ("teach us about your favorite topic") of Perplexity's pre-interview product exercise.
+This repo is the *making-of* behind that thread: the data I prepared, the prompts I designed, and the finding from my own run. **The live thread (linked above) is the source of truth for exactly what was asked and how Perplexity answered** — this README documents the inputs and the data work, not a transcript. It's my submission for **Option 1** ("teach us about your favorite topic") of Perplexity's pre-interview product exercise.
 
 ![Aerobic decoupling on a 21.4-mile trail long run](data/decoupling-chart.png)
 
@@ -16,15 +16,17 @@ It's a genuine passion — I run ultras and build tools for the sport — *and* 
 
 ## What went into Option 1
 
-The thread deliberately walks Perplexity's own **Learn → Build → Integrate → Repeat** cycle:
+I designed the prompt sequence around Perplexity's own **Learn → Build → Integrate → Repeat** cycle:
 
-| Phase | Query | What it does |
+| Phase | Query | Intent |
 |---|---|---|
 | **Learn** | 1–2 | Teach the topic; go deep on fueling science |
 | **Build** | 3 | Analyze *my own* 21.4-mile trail run (the data work below) |
 | **Integrate** | 4–5 | Turn the finding into a product thesis; tie back to mission |
 
-### The prompts
+### The prompts I designed
+
+*(The queries I prepared for the thread — see the live link above for the actual exchange and Perplexity's responses.)*
 
 **1 — teach:**
 ```
@@ -53,9 +55,9 @@ Last one: using my own run as the example, make the case for why endurance sport
 - **Pipeline:** parsed the GPX, computed per-mile elevation gain/loss and avg/max HR (haversine distance → mile buckets), and merged it with the screenshot splits (authoritative pace & grade-adjusted pace) into one tidy 22-row CSV.
 - **Cross-check:** GPX-derived elevation tracks Strava's own split figures (mile 3: +458 ft screenshot vs +422 net GPX; mile 19: −359 vs −365) — so the merge is validated, not hand-waved.
 
-### The finding
+### The finding (computed from the data, not model narration)
 
-Clean **aerobic decoupling** in the back half — more effort for less effort-adjusted speed:
+Working the merged dataset directly, the numbers show clean **aerobic decoupling** in the back half — more effort for less effort-adjusted speed:
 
 - **Grade-adjusted pace slowed +36 s/mi** (9:52 → 10:28) — terrain removed, so it's real fatigue, not hills.
 - **Average HR rose +8 bpm** (140 → 149) over the same stretch.
@@ -85,7 +87,7 @@ Clean **aerobic decoupling** in the back half — more effort for less effort-ad
 
 This was deliberately a multi-tool build, and that's part of the point:
 
-- **Perplexity** ran the actual thread — taught the topic, analyzed the pasted data, and generated the product thesis. *(The deliverable.)*
+- **Perplexity** ran the thread itself — the live exchange is at the link above. *(The deliverable.)*
 - **Claude Code** built the GPX→CSV pipeline, designed and iterated the prompts, found and charted the decoupling, and assembled this repo.
 
 Going raw-data → insight → product thesis by orchestrating more than one AI tool is exactly the kind of "builder" workflow the exercise is meant to surface.
